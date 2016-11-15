@@ -17,7 +17,7 @@ from django.conf.urls import url
 from django.contrib import admin
 
 urlpatterns = [
-    url(r'^$', 'root',),
+    url(r'^/', 'root'),
     url(r'^login/', 'login'),
     url(r'^signup/', 'signup'),
     url(r'^question/(\d+)/', 'question'),
