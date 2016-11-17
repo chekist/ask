@@ -1,7 +1,6 @@
-sudo unlink /etc/nginx/sites-enabled/default
-sudo ln -fs ~/web/etc/nginx.conf /etc/nginx/sites-enabled/test.conf
-sudo nginx -t && sudo /etc/init.d/nginx restart
-sudo ln -fs ~/web/etc/hello.py /etc/gunicorn.d/hello.py
-sudo unlink /etc/gunicorn.d/django
-sudo ln -s ~/web/etc/django /etc/gunicorn.d/django
+sudo rm /etc/nginx/sites-enabled/default
+sudo ln -sf /home/box/web/etc/nginx.conf /etc/nginx/sites-enabled/test.conf
+sudo /etc/init.d/nginx restart
+sudo ln -sf /home/box/web/etc/gunicorn-wsgi.conf /etc/gunicorn.d/test-wsgi
+sudo ln -sf /home/box/web/etc/gunicorn-django.conf /etc/gunicorn.d/test-django
 sudo /etc/init.d/gunicorn restart
